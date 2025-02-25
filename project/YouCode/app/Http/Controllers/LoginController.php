@@ -20,12 +20,12 @@ class LoginController extends Controller
         if (Auth::attempt($values)) {
             $user = Auth::user();
             $request->session()->regenerate();
-            
+
             if ($user->role) {
                 if ($user->role->role === "Admin") {
                     return redirect('dashboard')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
                 } elseif ($user->role->role === "Apprenant") {
-                    return redirect('etudiant')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
+                    return redirect('home')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
                 }
             }
         } else {
