@@ -19,12 +19,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'prenom',
         'email',
         'password',
         'date_de_naissance',
-        'cin',
-        'phone_numbre',
+        'CIN',
+        'Phone_numbre',
         'campus',
+        'role_id',
     ];
 
     /**
@@ -36,5 +38,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function role (){
+        return $this->belongsTo(Role::class);
+    }
 
 }
