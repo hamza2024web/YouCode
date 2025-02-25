@@ -20,6 +20,7 @@ class LoginController extends Controller
         if (Auth::attempt($values)) {
             $user = Auth::user();
             $request->session()->regenerate();
+            
             if ($user->role) {
                 if ($user->role->role === "Admin") {
                     return redirect('dashboard')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
