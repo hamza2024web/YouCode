@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100">
     <div class="flex">
         <!-- Sidebar -->
@@ -69,6 +71,9 @@
                         <input type="text" placeholder="Search..." class="pl-8 pr-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                     </div>
+                    <button id="addQuizBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Add Quiz
+                    </button>
                     <div class="relative">
                         <i class="fas fa-bell text-2xl text-gray-600"></i>
                         <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
@@ -189,5 +194,75 @@
             </section>
         </main>
     </div>
+
+    <!-- Quiz Creation Modal -->
+    <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl w-96 p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Create New Quiz</h2>
+                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="quizForm" action="/quiz" method="post" class="space-y-6 p-6 bg-white shadow-lg rounded-2xl">
+                @csrf
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Create a New Quiz</h2>
+
+                <!-- Dynamic Question and Answer Fields -->
+                <div id="questionContainer" class="space-y-4">
+                    <div class="question-block">
+                        <label for="questionInput" class="block text-gray-700">Question</label>
+                        <input type="text" name="question"class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Enter your question" required>
+
+                        <label for="responseInput" class="block text-gray-700 mt-2">Correct Answer</label>
+                        <input type="text" name="response"class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Enter the correct answer" required>
+                    </div>
+                </div>
+
+                <!-- Add More Questions Button -->
+                <button type="button" id="addQuestion"class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
+                    + Add Question
+                </button>
+
+                <!-- Submit Button -->
+                <button type="submit"class="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg w-full">
+                    Create Quiz
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const addQuizBtn = document.getElementById('addQuizBtn');
+        const quizModal = document.getElementById('quizModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        // Open Modal
+        addQuizBtn.addEventListener('click', () => {
+            quizModal.classList.remove('hidden');
+        });
+
+        // Close Modal
+        closeModalBtn.addEventListener('click', () => {
+            quizModal.classList.add('hidden');
+        });
+        document.getElementById('addQuestion').addEventListener('click', function() {
+            const container = document.getElementById('questionContainer');
+            const newQuestion = document.createElement('div');
+            newQuestion.classList.add('question-block');
+
+            newQuestion.innerHTML = `
+            <label class="block text-gray-700">Question</label>
+            <input type="text" name="question" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your question" required>
+
+            <label class="block text-gray-700 mt-2">Correct Answer</label>
+            <input type="text" name="response" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter the correct answer" required>
+        `;
+
+            container.appendChild(newQuestion);
+        });
+    </script>
 </body>
+
 </html>

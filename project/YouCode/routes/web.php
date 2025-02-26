@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistreController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuizController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +23,7 @@ Route::post('/login',[LoginController::class,'login']);
 Route::get('registre',[RegistreController::class,'index']);
 Route::post('store',[RegistreController::class,'store']); 
 Route::get('/home',[HomeController::class,'home']);
+Route::post('/quiz',[QuizController::class,'store']);
+
+
+
