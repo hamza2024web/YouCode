@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistreController;
@@ -14,7 +15,7 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/dashboard',[AdminController::class,'index']);
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'login']);
 Route::get('registre',[RegistreController::class,'index']);
