@@ -24,8 +24,12 @@ class QuizRequest extends FormRequest
     public function rules()
     {
         return [
-            'question',
-            'response',
+            'question' => 'required|string|max:255',
+            'response1' => 'required|string|max:255',
+            'response2' => 'required|string|max:255',
+            'response3' => 'required|string|max:255',
+            'response4' => 'required|string|max:255',
+            'correct_answer' => 'required|string|in:response1,response2,response3,response4',
         ];
     }
 }

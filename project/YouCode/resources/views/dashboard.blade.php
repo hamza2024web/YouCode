@@ -197,38 +197,59 @@
 
     <!-- Quiz Creation Modal -->
     <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-        <div class="bg-white rounded-lg shadow-xl w-96 p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-semibold">Create New Quiz</h2>
+        <div class="bg-white rounded-lg shadow-xl w-[600px] p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800">Create Quiz Question</h2>
                 <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
 
-            <form id="quizForm" action="/quiz" method="post" class="space-y-6 p-6 bg-white shadow-lg rounded-2xl">
+            <form id="quizForm" class="space-y-6" action="/quiz" method="post">
                 @csrf
-                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Create a New Quiz</h2>
+                <!-- Question Input -->
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Question</label>
+                    <input type="text" id="questionInput" name="question" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Enter your question" required>
+                </div>
 
-                <!-- Dynamic Question and Answer Fields -->
-                <div id="questionContainer" class="space-y-4">
-                    <div class="question-block">
-                        <label for="questionInput" class="block text-gray-700">Question</label>
-                        <input type="text" name="question"class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Enter your question" required>
+                <!-- Responses Inputs -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-700">Possible Answers</h3>
 
-                        <label for="responseInput" class="block text-gray-700 mt-2">Correct Answer</label>
-                        <input type="text" name="response"class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Enter the correct answer" required>
+                    <!-- Response 1 -->
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" name="correct_answer" value="response1" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                        <input type="text" name="response1" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 1" required>
+                    </div>
+
+                    <!-- Response 2 -->
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" name="correct_answer" value="response2" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                        <input type="text" name="response2" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 2" required>
+                    </div>
+
+                    <!-- Response 3 -->
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" name="correct_answer" value="response3" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                        <input type="text" name="response3" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 3" required>
+                    </div>
+
+                    <!-- Response 4 -->
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" name="correct_answer" value="response4" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                        <input type="text" name="response4" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 4" required>
                     </div>
                 </div>
 
-                <!-- Add More Questions Button -->
-                <button type="button" id="addQuestion"class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
-                    + Add Question
-                </button>
-
-                <!-- Submit Button -->
-                <button type="submit"class="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg w-full">
-                    Create Quiz
-                </button>
+                <!-- Action Buttons -->
+                <div class="flex justify-between mt-6">
+                    <button
+                        type="submit"
+                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center">
+                        <i class="fas fa-save mr-2"></i> Save Question
+                    </button>
+                </div>
             </form>
         </div>
     </div>
@@ -254,14 +275,15 @@
 
             newQuestion.innerHTML = `
             <label class="block text-gray-700">Question</label>
-            <input type="text" name="question" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your question" required>
+            <input type="text" name="question[]" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your question" required>
 
             <label class="block text-gray-700 mt-2">Correct Answer</label>
-            <input type="text" name="response" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter the correct answer" required>
+            <input type="text" name="response[]" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter the correct answer" required>
         `;
 
             container.appendChild(newQuestion);
         });
+        
     </script>
 </body>
 

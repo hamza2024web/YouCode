@@ -15,7 +15,10 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->id();
-            $table->string('response');
+            $table->unsignedBigInteger('question_id');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->string('text'); 
+            $table->boolean('is_correct')->default(false); 
             $table->timestamps();
         });
     }
