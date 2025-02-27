@@ -42,4 +42,8 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function quizhistory (){
+        return $this->hasMany(QuizHistory::class);
+    }
+
 }

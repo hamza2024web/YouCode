@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Response extends Model
+class QuizHistory extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'question_id', 
-        'text', 
-        'is_correct'
+        'response_id',
+        'candidat_id',
     ];
-    public function Question(){
-        return $this->belongsTo(Question::class,'question_id');
-    }
-    public function quizHistory(){
+
+    public function responses(){
         return $this->belongsTo(Response::class);
+    }
+    public function candidat(){
+        return $this->belongsTo(User::class);
     }
 }

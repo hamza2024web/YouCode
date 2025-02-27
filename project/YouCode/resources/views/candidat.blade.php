@@ -36,23 +36,23 @@
 
                 <!-- Display Responses -->
                 <div id="responseOptions" class="space-y-4">
-                    @foreach($question->responses  as $response)
-                    <label class="block">
-                        <input type="radio" name="response" value="{{ $response->id }}" class="mr-3 hidden">
-                        <div class="response-card bg-gray-100 p-4 rounded-lg hover:bg-blue-50 cursor-pointer transition">
-                            <span class="font-medium text-gray-700">{{ $response->text }}</span>
-                        </div>
-                    </label>
+                    @foreach($question->responses as $response)
+                    <form action="/storeTheResponse" method="post">
+                        @csrf
+                        <input type="hidden" name="candidat_id" value="{{ $user->id }}">
+                        <input type="hidden" name="response_id" value="{{ $response->id }}">
+                        <button type="submit" class="response-card w-full p-4 rounded-lg transition-all duration-300 bg-cyan-500 text-white font-semibold shadow-md hover:bg-cyan-600 hover:shadow-lg active:bg-cyan-700 focus:outline-none focus:ring focus:ring-cyan-300">
+                            <span class="font-medium">{{ $response->text }}</span>
+                        </button>
+
+                    </form>
+
                     @endforeach
                 </div>
                 @endforeach
 
                 <!-- Pagination Navigation -->
                 <div class="flex justify-between mt-8">
-                    @if($questions->previousPageUrl())
-                    <a href="{{ $questions->previousPageUrl() }}" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition">Previous</a>
-                    @endif
-
                     @if($questions->nextPageUrl())
                     <a href="{{ $questions->nextPageUrl() }}" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Next</a>
                     @endif

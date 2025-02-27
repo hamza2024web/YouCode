@@ -25,7 +25,8 @@ Route::get('registre',[RegistreController::class,'index']);
 Route::post('store',[RegistreController::class,'store']); 
 Route::get('/home',[HomeController::class,'home']);
 Route::post('/quiz',[QuizController::class,'store']);
-Route::get('/candidat',[CandidatController::class,'indexCandidat'])->name('quiz.index');
+Route::get('/candidat',[CandidatController::class,'indexCandidat']);
+Route::post('/storeTheResponse',[CandidatController::class,'store']);
 
 
 
