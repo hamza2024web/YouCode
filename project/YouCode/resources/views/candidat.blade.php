@@ -19,10 +19,6 @@
                     </div>
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center">
-                            <i class="fas fa-clock mr-2"></i>
-                            <span id="timer" class="font-semibold">30:00</span>
-                        </div>
-                        <div class="flex items-center">
                             <i class="fas fa-question-circle mr-2"></i>
                             <span id="questionCounter">1/10</span>
                         </div>
@@ -35,7 +31,7 @@
                 <!-- Question Section -->
                 <div id="questionSection">
                     <h2 id="questionText" class="text-xl font-semibold text-gray-800 mb-6">
-                        What is the primary purpose of a constructor in object-oriented programming?
+                        
                     </h2>
 
                     <!-- Response Options -->
