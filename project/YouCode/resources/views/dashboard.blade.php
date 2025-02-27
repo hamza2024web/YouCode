@@ -50,8 +50,12 @@
                             Settings
                         </a>
                     </li>
+                    <button id="addQuizBtn" class="flex items-center p-2 hover:bg-blue-700 rounded-lg transition">
+                        <i class="fas fa-plus mr-2"></i> Add Quiz
+                    </button>
                 </ul>
             </nav>
+            
 
             <div class="absolute bottom-0 left-0 right-0 p-4">
                 <button class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition">
@@ -60,144 +64,11 @@
                 </button>
             </div>
         </aside>
-
-        <!-- Main Content -->
-        <main class="flex-1 p-10">
-            <!-- Header -->
-            <header class="flex justify-between items-center mb-10">
-                <h2 class="text-3xl font-semibold text-gray-800">Dashboard</h2>
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <input type="text" placeholder="Search..." class="pl-8 pr-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-                    </div>
-                    <button id="addQuizBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center">
-                        <i class="fas fa-plus mr-2"></i> Add Quiz
-                    </button>
-                    <div class="relative">
-                        <i class="fas fa-bell text-2xl text-gray-600"></i>
-                        <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <img src="https://via.placeholder.com/40" class="rounded-full" alt="Admin Profile">
-                        <span>Admin Name</span>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Stats Overview -->
-            <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-gray-500 text-sm">Total Quizzes</h3>
-                            <p class="text-2xl font-bold text-blue-600">45</p>
-                        </div>
-                        <i class="fas fa-clipboard-list text-blue-500 text-2xl"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-gray-500 text-sm">Active Users</h3>
-                            <p class="text-2xl font-bold text-green-600">1,200</p>
-                        </div>
-                        <i class="fas fa-users text-green-500 text-2xl"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-gray-500 text-sm">Completed Quizzes</h3>
-                            <p class="text-2xl font-bold text-purple-600">350</p>
-                        </div>
-                        <i class="fas fa-check-circle text-purple-500 text-2xl"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-gray-500 text-sm">Pending Approvals</h3>
-                            <p class="text-2xl font-bold text-yellow-600">12</p>
-                        </div>
-                        <i class="fas fa-hourglass-half text-yellow-500 text-2xl"></i>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Recent Activity -->
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Recent Quizzes -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Recent Quizzes</h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center border-b pb-2">
-                            <div>
-                                <h4 class="font-semibold">JavaScript Fundamentals</h4>
-                                <p class="text-sm text-gray-500">Created by: John Doe</p>
-                            </div>
-                            <span class="text-green-500">Active</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b pb-2">
-                            <div>
-                                <h4 class="font-semibold">Python Programming</h4>
-                                <p class="text-sm text-gray-500">Created by: Jane Smith</p>
-                            </div>
-                            <span class="text-yellow-500">Pending</span>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <div>
-                                <h4 class="font-semibold">Web Development</h4>
-                                <p class="text-sm text-gray-500">Created by: Mike Johnson</p>
-                            </div>
-                            <span class="text-blue-500">Draft</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- User Performance -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Top Performers</h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center border-b pb-2">
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/40" class="rounded-full mr-3" alt="User">
-                                <div>
-                                    <h4 class="font-semibold">Emma Wilson</h4>
-                                    <p class="text-sm text-gray-500">95% Average Score</p>
-                                </div>
-                            </div>
-                            <span class="text-green-500">🏆</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b pb-2">
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/40" class="rounded-full mr-3" alt="User">
-                                <div>
-                                    <h4 class="font-semibold">Alex Rodriguez</h4>
-                                    <p class="text-sm text-gray-500">92% Average Score</p>
-                                </div>
-                            </div>
-                            <span class="text-blue-500">🥈</span>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/40" class="rounded-full mr-3" alt="User">
-                                <div>
-                                    <h4 class="font-semibold">Sarah Lee</h4>
-                                    <p class="text-sm text-gray-500">88% Average Score</p>
-                                </div>
-                            </div>
-                            <span class="text-yellow-500">🥉</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </main>
     </div>
 
     <!-- Quiz Creation Modal -->
-    <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-        <div class="bg-white rounded-lg shadow-xl w-[600px] p-8">
+    <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center overflow-y-auto">
+        <div class="bg-white rounded-lg shadow-xl w-[600px] max-h-[90vh] p-8 overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-semibold text-gray-800">Create Quiz Question</h2>
                 <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
@@ -207,47 +78,31 @@
 
             <form id="quizForm" class="space-y-6" action="/quiz" method="post">
                 @csrf
-                <!-- Question Input -->
-                <div>
-                    <label class="block text-gray-700 font-semibold mb-2">Question</label>
-                    <input type="text" id="questionInput" name="question" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Enter your question" required>
-                </div>
-
-                <!-- Responses Inputs -->
-                <div class="space-y-4">
-                    <h3 class="text-lg font-semibold text-gray-700">Possible Answers</h3>
-
-                    <!-- Response 1 -->
-                    <div class="flex items-center space-x-2">
-                        <input type="radio" name="correct_answer" value="response1" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response1" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 1" required>
-                    </div>
-
-                    <!-- Response 2 -->
-                    <div class="flex items-center space-x-2">
-                        <input type="radio" name="correct_answer" value="response2" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response2" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 2" required>
-                    </div>
-
-                    <!-- Response 3 -->
-                    <div class="flex items-center space-x-2">
-                        <input type="radio" name="correct_answer" value="response3" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response3" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 3" required>
-                    </div>
-
-                    <!-- Response 4 -->
-                    <div class="flex items-center space-x-2">
-                        <input type="radio" name="correct_answer" value="response4" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response4" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 4" required>
-                    </div>
+                <div id="questionContainer" class="space-y-6">
+                    <!-- Dynamic Questions -->
+                    <script>
+                        for (let i = 1; i <= 10; i++) {
+                            document.write(`
+                                <div class="question-block">
+                                    <label class="block text-gray-700 font-semibold mb-2">Question ${i}</label>
+                                    <input type="text" name="questions[]" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Enter question ${i}" required>
+                                    <h3 class="text-lg font-semibold text-gray-700 mt-4">Possible Answers</h3>
+                                    ${[1, 2, 3, 4].map(num => `
+                                        <div class="flex items-center space-x-2 mt-2">
+                                            <input type="radio" name="correct_answer_${i}" value="response_${num}" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            <input type="text" name="responses_${i}[]" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response ${num}" required>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `);
+                        }
+                    </script>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="flex justify-between mt-6">
-                    <button
-                        type="submit"
-                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center">
-                        <i class="fas fa-save mr-2"></i> Save Question
+                    <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center">
+                        <i class="fas fa-save mr-2"></i> Save Questions
                     </button>
                 </div>
             </form>
@@ -259,6 +114,7 @@
         const addQuizBtn = document.getElementById('addQuizBtn');
         const quizModal = document.getElementById('quizModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
+
         // Open Modal
         addQuizBtn.addEventListener('click', () => {
             quizModal.classList.remove('hidden');
@@ -267,21 +123,6 @@
         // Close Modal
         closeModalBtn.addEventListener('click', () => {
             quizModal.classList.add('hidden');
-        });
-        document.getElementById('addQuestion').addEventListener('click', function() {
-            const container = document.getElementById('questionContainer');
-            const newQuestion = document.createElement('div');
-            newQuestion.classList.add('question-block');
-
-            newQuestion.innerHTML = `
-            <label class="block text-gray-700">Question</label>
-            <input type="text" name="question" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your question" required>
-
-            <label class="block text-gray-700 mt-2">Correct Answer</label>
-            <input type="text" name="response" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter the correct answer" required>
-        `;
-
-            container.appendChild(newQuestion);
         });
     </script>
 </body>

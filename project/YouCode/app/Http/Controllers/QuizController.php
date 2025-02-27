@@ -9,28 +9,26 @@ use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
-    public function store(QuizRequest $quiz){
-        $quizInputs = $quiz->validated();
+    public function store(Request $quiz){
+        foreach ($quiz->questions as $index => $questionText) {
 
-        $saveQuestion = Question::create([
-            'question' => $quizInputs['question']
-        ]);
-
-        $responses = [
-            'response1' => $quizInputs['response1'],
-            'response2' => $quizInputs['response2'],
-            'response3' => $quizInputs['response3'],
-            'response4' => $quizInputs['response4'],
-        ];
-
-        foreach ($responses as $key => $text){
-            Response::create([
-                'question_id' => $saveQuestion->id,
-                'text' => $text,
-                'is_correct' => $quizInputs['correct_answer'] === $key,
+            $saveQuestion = Question::create([
+                'question' => $questionText,
             ]);
+
+            $responsesKey = 'responses_' . ($index + 1);
+            $correctAnswerKey = 'correct_answer_' . ($index + 1);
+
+            $correctIndex = intval(str_replace('response_', '', $quiz->$correctAnswerKey)) - 1;
+
+            foreach ($quiz->$responsesKey as $responseIndex => $responseText) {
+                Response::create([
+                    'question_id' => $saveQuestion->id,
+                    'text' => $responseText,
+                    'is_correct' => $responseIndex === $correctIndex, 
+                ]);
+            }
         }
-        return redirect('dashboard')->with('success','the quiz is insert correctly');
+        return redirect('dashboard');
     }
 }
- 
