@@ -18,9 +18,11 @@ use App\Http\Controllers\QuizController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::get('/dashboard',[AdminController::class,'index']);
-Route::get('/login',[LoginController::class,'index']);
-Route::post('/login',[LoginController::class,'login']);
+Route::get('/login',[LoginController::class,'index'])->middleware('guest');
+Route::post('/login',[LoginController::class,'login'])->middleware('guest');
 Route::get('registre',[RegistreController::class,'index']);
 Route::post('store',[RegistreController::class,'store']); 
 Route::get('/home',[HomeController::class,'home']);

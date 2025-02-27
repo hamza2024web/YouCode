@@ -9,7 +9,12 @@ use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store(Request $quiz){
+        
         foreach ($quiz->questions as $index => $questionText) {
 
             $saveQuestion = Question::create([

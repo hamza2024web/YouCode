@@ -11,6 +11,10 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class CandidatController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function indexCandidat(){
         $user = Auth::user();
         $questions = Question::with('responses')->paginate(1);
