@@ -30,45 +30,35 @@
 
             <!-- Quiz Content -->
             <div id="quizContainer" class="p-8">
-                <!-- Question Section -->
-                <div id="questionSection">
-                    @foreach ($questions as $question)
-                    <h2 id="questionText" class="text-xl font-semibold text-gray-800 mb-6">{{$question->question}}</h2>
+                @foreach($questions as $question)
+                <!-- Display Question -->
+                <h2 id="questionText" class="text-xl font-semibold text-gray-800 mb-6">{{ $question->question }}</h2>
+
+                <!-- Display Responses -->
+                <div id="responseOptions" class="space-y-4">
+                    @foreach($question->responses  as $response)
+                    <label class="block">
+                        <input type="radio" name="response" value="{{ $response->id }}" class="mr-3 hidden">
+                        <div class="response-card bg-gray-100 p-4 rounded-lg hover:bg-blue-50 cursor-pointer transition">
+                            <span class="font-medium text-gray-700">{{ $response->text }}</span>
+                        </div>
+                    </label>
                     @endforeach
+                </div>
+                @endforeach
 
-                    <!-- Response Options -->
-                    <div id="responseOptions" class="space-y-4">
-                        @foreach ($responses as $response)
-                        <label class="block">
-                            <input
-                                type="radio"
-                                name="response"
-                                value="a"
-                                class="mr-3 hidden">
-                            <div class="response-card bg-gray-100 p-4 rounded-lg hover:bg-blue-50 cursor-pointer transition">
-                                <span class="font-medium text-gray-700">
-                                    {{$response->text}}
-                                </span>
-                            </div>
-                        </label>
-                        @endforeach
-                    </div>
+                <!-- Pagination Navigation -->
+                <div class="flex justify-between mt-8">
+                    @if($questions->previousPageUrl())
+                    <a href="{{ $questions->previousPageUrl() }}" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition">Previous</a>
+                    @endif
 
-                    <!-- Navigation Buttons -->
-                    <div class="flex justify-between mt-8">
-                        <button
-                            id="prevButton"
-                            class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition">
-                            Previous
-                        </button>
-                        <button
-                            id="nextButton"
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-                            Next
-                        </button>
-                    </div>
+                    @if($questions->nextPageUrl())
+                    <a href="{{ $questions->nextPageUrl() }}" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Next</a>
+                    @endif
                 </div>
             </div>
+
         </div>
     </div>
 </body>

@@ -12,7 +12,7 @@ class Question extends Model
         'question',
     ];
 
-    public function Response (){
-        return $this->hasMany(Response::class);
+    public function responses (){
+        return $this->hasMany(Response::class,'question_id');
     }
 }

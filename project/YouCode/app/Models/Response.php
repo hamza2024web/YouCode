@@ -14,6 +14,6 @@ class Response extends Model
         'is_correct'
     ];
     public function Question(){
-        return $this->belongsTo(Question::class);
+        return $this->belongsTo(Question::class,'question_id');
     }
 }

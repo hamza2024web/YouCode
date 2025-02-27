@@ -9,10 +9,8 @@ use Illuminate\Http\Request;
 class CandidatController extends Controller
 {
     public function indexCandidat(){
-
-        $questions = Question::all();
-        $responses = Response::all();
         
-        return view('candidat',compact('questions','responses'));
+        $questions = Question::with('responses')->paginate(1);
+        return view('candidat',compact('questions'));
     }
 }
