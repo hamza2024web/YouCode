@@ -210,7 +210,7 @@
                 <!-- Question Input -->
                 <div>
                     <label class="block text-gray-700 font-semibold mb-2">Question</label>
-                    <input type="text" id="questionInput" name="question[]" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Enter your question" required>
+                    <input type="text" id="questionInput" name="question" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Enter your question" required>
                 </div>
 
                 <!-- Responses Inputs -->
@@ -220,25 +220,25 @@
                     <!-- Response 1 -->
                     <div class="flex items-center space-x-2">
                         <input type="radio" name="correct_answer" value="response1" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response1[]" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 1" required>
+                        <input type="text" name="response1" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 1" required>
                     </div>
 
                     <!-- Response 2 -->
                     <div class="flex items-center space-x-2">
                         <input type="radio" name="correct_answer" value="response2" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response2[]" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 2" required>
+                        <input type="text" name="response2" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 2" required>
                     </div>
 
                     <!-- Response 3 -->
                     <div class="flex items-center space-x-2">
                         <input type="radio" name="correct_answer" value="response3" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response3[]" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 3" required>
+                        <input type="text" name="response3" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 3" required>
                     </div>
 
                     <!-- Response 4 -->
                     <div class="flex items-center space-x-2">
                         <input type="radio" name="correct_answer" value="response4" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
-                        <input type="text" name="response4[]" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 4" required>
+                        <input type="text" name="response4" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Response 4" required>
                     </div>
                 </div>
 
