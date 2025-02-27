@@ -17,13 +17,20 @@ class CandidatController extends Controller
         return view('candidat',compact('questions'),compact('user'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request ){
+        
         $answersFilds = $request->validate([
+            'question_id' => 'required',
             'candidat_id' => 'required',
             'response_id' => 'required',
         ]);
 
+        $question = $answersFilds['question_id'];
+
         QuizHistory::create($answersFilds);
-        
+
+        $user = Auth::user();
+        $questions = Question::with('responses')->paginate($question+1);
+        return view('candidat',compact('questions'),compact('user'));
     }
 }

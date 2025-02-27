@@ -39,12 +39,12 @@
                     @foreach($question->responses as $response)
                     <form action="/storeTheResponse" method="post">
                         @csrf
+                        <input type="hidden" name="question_id" value="{{ $question->id }}">
                         <input type="hidden" name="candidat_id" value="{{ $user->id }}">
                         <input type="hidden" name="response_id" value="{{ $response->id }}">
                         <button type="submit" class="response-card w-full p-4 rounded-lg transition-all duration-300 bg-cyan-500 text-white font-semibold shadow-md hover:bg-cyan-600 hover:shadow-lg active:bg-cyan-700 focus:outline-none focus:ring focus:ring-cyan-300">
                             <span class="font-medium">{{ $response->text }}</span>
                         </button>
-
                     </form>
 
                     @endforeach
