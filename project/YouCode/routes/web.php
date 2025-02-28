@@ -19,7 +19,6 @@ use App\Http\Controllers\QuizController;
 |
 */
 
-
 Route::get('/dashboard',[AdminController::class,'index']);
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
@@ -30,6 +29,4 @@ Route::post('/quiz',[QuizController::class,'store']);
 Route::get('/candidat',[CandidatController::class,'indexCandidat']);
 Route::post('/storeTheResponse',[CandidatController::class,'store']);
 Route::get('/',[HomeController::class,'tologin']);
-
-
 

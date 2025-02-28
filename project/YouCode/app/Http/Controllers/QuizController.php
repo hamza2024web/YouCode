@@ -14,7 +14,7 @@ class QuizController extends Controller
         $this->middleware('auth');
     }
     public function store(Request $quiz){
-        
+
         foreach ($quiz->questions as $index => $questionText) {
 
             $saveQuestion = Question::create([
