@@ -21,11 +21,11 @@ use App\Http\Controllers\QuizController;
 
 
 Route::get('/dashboard',[AdminController::class,'index']);
-Route::get('/login',[LoginController::class,'index'])->middleware('guest');
-Route::post('/login',[LoginController::class,'login'])->middleware('guest');
+Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
 Route::get('registre',[RegistreController::class,'index']);
 Route::post('store',[RegistreController::class,'store']); 
-Route::get('/home',[HomeController::class,'home']);
+Route::get('/',[HomeController::class,'home']);
 Route::post('/quiz',[QuizController::class,'store']);
 Route::get('/candidat',[CandidatController::class,'indexCandidat']);
 Route::post('/storeTheResponse',[CandidatController::class,'store']);
