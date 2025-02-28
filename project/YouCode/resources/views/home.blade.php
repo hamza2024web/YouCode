@@ -1,95 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouCode Candidate Challenge</title>
+    <title>YouCode Quiz Platform</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="youcode-logo.png" alt="YouCode Logo" class="h-10 mr-4">
+                <h1 class="text-2xl font-bold text-blue-600">YouCode Quiz Platform</h1>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition">
+                    <i class="fas fa-chart-bar mr-2"></i>Progress
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<body class="bg-gradient-to-br from-blue-50 via-white to-indigo-100 min-h-screen flex items-center justify-center font-inter overflow-hidden">
-    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-2xl p-8 mb-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Welcome, Student!</h2>
+                <p class="text-blue-100 mb-6">
+                    Ready to test your skills and enhance your knowledge? 
+                    Choose from our available quizzes and challenge yourself!
+                </p>
+            </div>
+        </div>
 
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="bg-white shadow-2xl rounded-3xl overflow-hidden max-w-6xl mx-auto grid md:grid-cols-12 border-2 border-blue-50">
-            <!-- Left Sidebar with Detailed Information -->
-            <div class="md:col-span-5 bg-gradient-to-br from-blue-600 to-purple-700 p-8 text-white flex flex-col justify-center relative overflow-hidden">
-                <!-- Floating Shapes -->
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full"></div>
-                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-white/10 rounded-full"></div>
-
-                <div class="z-10 space-y-6">
-                    <div class="flex items-center space-x-4">
-                        <h1 class="text-4xl font-bold">Candidate Challenge</h1>
+        <!-- Quiz Categories -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Programming Quiz -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                            Programming
+                        </span>
+                        <span class="text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>30 mins
+                        </span>
                     </div>
-
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3 bg-white/10 p-3 rounded-xl">
-                            <i data-feather="target" class="text-green-400 w-6 h-6"></i>
-                            <div>
-                                <h3 class="font-semibold">Comprehensive Assessment</h3>
-                                <p class="text-xs text-white/70">Evaluate your technical and problem-solving skills</p>
-                            </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development Basics</h3>
+                    <p class="text-gray-600 mb-4">Test your knowledge of HTML, CSS, and JavaScript fundamentals.</p>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-question-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">10 Questions</span>
                         </div>
-
-                        <div class="flex items-center space-x-3 bg-white/10 p-3 rounded-xl">
-                            <i data-feather="clock" class="text-yellow-400 w-6 h-6"></i>
-                            <div>
-                                <h3 class="font-semibold">Time-Boxed Challenge</h3>
-                                <p class="text-xs text-white/70">60 minutes to showcase your potential</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-3 bg-white/10 p-3 rounded-xl">
-                            <i data-feather="award" class="text-red-400 w-6 h-6"></i>
-                            <div>
-                                <h3 class="font-semibold">Career Opportunity</h3>
-                                <p class="text-xs text-white/70">Your gateway to becoming a YouCode student</p>
-                            </div>
-                        </div>
+                        <a href="/candidat" class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-lg hover:from-blue-700 hover:to-purple-800 transition duration-300">
+                            Start Quiz
+                        </a>
                     </div>
+                </div>
+            </div>
 
-                    <div class="mt-6 bg-white/5 rounded-xl p-5 border border-white/10">
-                        <h4 class="text-xl font-bold mb-3">Quiz Sections</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-center space-x-2">
-                                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                                <span>Logic & Problem Solving</span>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
-                                <span>Programming Fundamentals</span>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
-                                <span>Analytical Reasoning</span>
-                            </li>
-                            <li class="flex items-center space-x-2">
-                                <span class="w-2 h-2 bg-red-400 rounded-full"></span>
-                                <span>Technical Aptitude</span>
-                            </li>
-                        </ul>
+            <!-- Database Quiz -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            Database
+                        </span>
+                        <span class="text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>45 mins
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">SQL Fundamentals</h3>
+                    <p class="text-gray-600 mb-4">Challenge your knowledge of database management and SQL queries.</p>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-question-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">15 Questions</span>
+                        </div>
+                        <a href="/candidat" class="px-6 py-2 bg-gradient-to-r from-green-600 to-teal-700 text-white rounded-lg hover:from-green-700 hover:to-teal-800 transition duration-300">
+                            Start Quiz
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Networking Quiz -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">
+                            Networking
+                        </span>
+                        <span class="text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>40 mins
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Network Protocols</h3>
+                    <p class="text-gray-600 mb-4">Explore your understanding of network fundamentals and protocols.</p>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fas fa-question-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">12 Questions</span>
+                        </div>
+                        <a href="/candidat" class="px-6 py-2 bg-gradient-to-r from-red-600 to-pink-700 text-white rounded-lg hover:from-red-700 hover:to-pink-800 transition duration-300">
+                            Start Quiz
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Footer-like Information -->
-        <div class="mt-8 text-center max-w-3xl mx-auto">
-            <p class="text-gray-600 text-sm">
-                The YouCode Candidate Challenge is your first step towards a transformative tech education.
-                We're looking for passionate, creative, and driven individuals ready to shape the future of technology.
-            </p>
+        <!-- User Statistics -->
+        <div class="mt-12 bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Your Progress</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-trophy text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold text-gray-800">Completed Quizzes</h4>
+                    <p class="text-3xl font-bold text-blue-600">7</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-chart-line text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold text-gray-800">Average Score</h4>
+                    <p class="text-3xl font-bold text-green-600">85%</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-medal text-4xl text-purple-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold text-gray-800">Highest Score</h4>
+                    <p class="text-3xl font-bold text-purple-600">95%</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Initialize Feather Icons
-        feather.replace();
-    </script>
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <p class="text-gray-600">&copy; 2023 YouCode. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-600">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
-
 </html>

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        return redirect('login');
+        return view('home');
+    }
+    public function tologin(){
+        return view('login');
     }
 }
