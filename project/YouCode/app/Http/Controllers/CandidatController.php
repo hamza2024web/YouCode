@@ -34,7 +34,15 @@ class CandidatController extends Controller
         QuizHistory::create($answersFilds);
 
         $user = Auth::user();
-        $questions = Question::with('responses')->paginate($question+1);
+        $totalQuestions = Question::count();
+        $answeredQuestions = QuizHistory::where('candidat_id', $answersFilds['candidat_id'])->distinct('response_id')->count();
+
+        if ($answeredQuestions >= $totalQuestions) {
+            return redirect()->route('quiz.completed'); 
+        }
+
+        $nextQuestion = $question+1;
+        $questions = Question::with('responses')->paginate($nextQuestion);
         return view('candidat',compact('questions'),compact('user'));
     }
 }
