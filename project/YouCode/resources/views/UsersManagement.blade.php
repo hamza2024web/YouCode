@@ -20,7 +20,7 @@
 
             <nav>
                 <ul class="space-y-2">
-                    <li><a href="#" class="flex items-center p-2 hover:bg-blue-700 rounded-lg transition"><i class="fas fa-tachometer-alt mr-3"></i>Dashboard</a>
+                    <li><a href="/dashboard" class="flex items-center p-2 hover:bg-blue-700 rounded-lg transition"><i class="fas fa-tachometer-alt mr-3"></i>Dashboard</a>
                     </li>
                     <li><a href="#" class="flex items-center p-2 hover:bg-blue-700 rounded-lg transition"><i class="fas fa-question-circle mr-3"></i>Manage Quizzes</a>
                     </li>
@@ -107,33 +107,6 @@
         </main>
     </div>
 
-    <!-- Modal for Adding User -->
-    <div id="addUserModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-        <div class="bg-white rounded-lg p-6 w-96">
-            <h2 class="text-xl font-bold mb-4">Add New User</h2>
-            <form id="addUserForm">
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2" for="username">Username:</label>
-                    <input type="text" id="username" class="w-full p-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2" for="email">Email:</label>
-                    <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 mb-2" for="role">Role:</label>
-                    <select id="role" class="w-full p-2 border border-gray-300 rounded">
-                        <option value="Member">Member</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded mr-2" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">Add User</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <script>
         document.getElementById('addUserBtn').onclick = function() {
@@ -144,24 +117,7 @@
             document.getElementById('addUserModal').classList.add('hidden');
         }
 
-        document.getElementById('addUserForm').onsubmit = function(event) {
-            event.preventDefault();
-            // Add user logic here
-            closeModal();
-            alert('User added successfully!');
-        };
 
-        function editUser(username) {
-            alert('Edit user: ' + username);
-            // Implement edit logic here
-        }
-
-        function deleteUser(username) {
-            if (confirm('Are you sure you want to delete user: ' + username + '?')) {
-                alert('User ' + username + ' deleted!');
-                // Implement delete logic here
-            }
-        }
     </script>
 </body>
 
