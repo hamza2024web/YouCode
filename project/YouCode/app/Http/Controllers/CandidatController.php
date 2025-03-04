@@ -39,11 +39,14 @@ class CandidatController extends Controller
         $totalQuestions = Question::count();
         $answeredQuestions = QuizHistory::where('candidat_id', $answersFilds['candidat_id'])->distinct('response_id')->count();
 
-        
+
         if ($answeredQuestions >= $totalQuestions) {
             $candidat_id = $answersFilds['candidat_id'];
             $score = $this->calculateScore($candidat_id);
-            QuizResult::create($candidat_id,$score);
+            QuizResult::create([
+                'candidat_id' => $candidat_id,
+                'score' => $score,
+            ]);
             return redirect()->route('quiz.completed'); 
         }
 
