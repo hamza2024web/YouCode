@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,5 +34,10 @@ class LoginController extends Controller
                 'email' => 'Email ou mot de passe incorrect.'
             ]);
         }
+    }
+    public function logout(){
+        Session()->flush();
+        Auth::logout();
+        return redirect('login');
     }
 }

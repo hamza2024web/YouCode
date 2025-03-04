@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md">
@@ -24,6 +26,9 @@
                 <a href="#" class="text-gray-700 hover:text-blue-600 transition">
                     <i class="fas fa-chart-bar mr-2"></i>Progress
                 </a>
+                <a href="/logout" class="text-red-600 hover:text-red-700 transition">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                </a>
             </div>
         </div>
     </nav>
@@ -35,7 +40,7 @@
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl font-bold mb-4">Welcome, Student!</h2>
                 <p class="text-blue-100 mb-6">
-                    Ready to test your skills and enhance your knowledge? 
+                    Ready to test your skills and enhance your knowledge?
                     Choose from our available quizzes and challenge yourself!
                 </p>
             </div>
@@ -56,7 +61,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development Basics</h3>
                     <p class="text-gray-600 mb-4">Test your knowledge of HTML, CSS, and JavaScript fundamentals.</p>
-                    
+
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <i class="fas fa-question-circle text-green-500 mr-2"></i>
@@ -82,7 +87,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">SQL Fundamentals</h3>
                     <p class="text-gray-600 mb-4">Challenge your knowledge of database management and SQL queries.</p>
-                    
+
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <i class="fas fa-question-circle text-green-500 mr-2"></i>
@@ -108,7 +113,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Network Protocols</h3>
                     <p class="text-gray-600 mb-4">Explore your understanding of network fundamentals and protocols.</p>
-                    
+
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <i class="fas fa-question-circle text-green-500 mr-2"></i>
@@ -163,4 +168,5 @@
         </div>
     </footer>
 </body>
+
 </html>
