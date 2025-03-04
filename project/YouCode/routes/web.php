@@ -31,3 +31,4 @@ Route::post('/storeTheResponse',[CandidatController::class,'store']);
 Route::get('/',[HomeController::class,'tologin']);
 Route::get('/quiz/completed', function() {return view('quiz.completed');})->name('quiz.completed');
 Route::get('/logout',[LoginController::class,'logout']);
+Route::get('UsersManagement',[AdminController::class,'user']);

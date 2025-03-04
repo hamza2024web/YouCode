@@ -33,7 +33,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center p-2 hover:bg-blue-700 rounded-lg transition">
+                        <a href="/UsersManagement" class="flex items-center p-2 hover:bg-blue-700 rounded-lg transition">
                             <i class="fas fa-users mr-3"></i>
                             User Management
                         </a>
@@ -55,13 +55,15 @@
                     </button>
                 </ul>
             </nav>
-            
+
 
             <div class="absolute bottom-0 left-0 right-0 p-4">
-                <button class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition">
-                    <i class="fas fa-sign-out-alt mr-2"></i>
-                    Logout
-                </button>
+                <a href="/logout">
+                    <button class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i>
+                        Logout
+                    </button>
+                </a>
             </div>
         </aside>
     </div>
