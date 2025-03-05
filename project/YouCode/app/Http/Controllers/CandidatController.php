@@ -54,7 +54,7 @@ class CandidatController extends Controller
         $questions = Question::with('responses')->paginate($nextQuestion);
         return view('candidat',compact('questions'),compact('user'));
     }
-    public function calculateScore($candidat_id){
+    private function calculateScore($candidat_id){
         $UsersResponses = QuizHistory::where('candidat_id',$candidat_id)->pluck('response_id')->toArray();
         $correctAnswers = Response::whereIn('id',$UsersResponses)->where('is_correct',true)->count();
         $totalQuestions = Question::count();

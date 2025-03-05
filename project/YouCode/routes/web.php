@@ -25,6 +25,7 @@ Route::get('/login',[LoginController::class,'index'])->name('login')->middleware
 Route::post('/login',[LoginController::class,'login'])->name('login')->middleware('guest');
 Route::get('registre',[RegistreController::class,'index']);
 Route::post('store',[RegistreController::class,'store']); 
+Route::post('/storeStaff',[RegistreController::class,'storeStaff']);
 Route::get('/home',[HomeController::class,'home']);
 Route::post('/quiz',[QuizController::class,'store']);
 Route::get('/candidat',[CandidatController::class,'indexCandidat']);

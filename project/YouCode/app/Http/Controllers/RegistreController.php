@@ -25,4 +25,9 @@ class RegistreController extends Controller
 
         return redirect('login')->with('success','Your account Is Registred Successfully');
     }
+    public function storeStaff(Request $request){
+        dd($request);
+        $formFields = $request->validate();
+
+    }
 }
