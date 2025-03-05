@@ -26,8 +26,31 @@ class RegistreController extends Controller
         return redirect('login')->with('success','Your account Is Registred Successfully');
     }
     public function storeStaff(Request $request){
-        dd($request);
-        $formFields = $request->validate();
+        $formFields = $request->validate([
+            'role' => 'required',
+            'name' => 'required',
+            'prenom' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'date_de_naissance' => 'required',
+            'CIN' => 'required',
+            'Phone_numbre' => 'required',
+            'campus' => 'required',
+        ]);
+        $password = $request->password;
+        $formFields['password'] = Hash::make($password);
 
+        if ($formFields['role'] == "Administrateur"){
+            $role = Role::where('role','Administrateur')->first();
+        } elseif ($formFields['role'] == "Staff") {
+            $role = Role::where('role','Staff')->first();
+        } elseif ($formFields['role'] == "CME"){
+            $role = Role::where('role','CME')->first();
+        }
+
+        $formFields['role_id'] = $role->id;
+
+        User::create($formFields);
+        return redirect('UsersManagement')->with('success','Account Created Successfully');
     }
 }
