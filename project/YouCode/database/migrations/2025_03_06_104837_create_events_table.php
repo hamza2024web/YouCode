@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveColumnInQuizhistory extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class RemoveColumnInQuizhistory extends Migration
      */
     public function up()
     {
-        Schema::table('quizhistory', function (Blueprint $table) {
-            $table->dropColumn('questione_id');
+        Schema::create('events', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->dateTime('date_start');
+            $table->dateTime('date_end');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class RemoveColumnInQuizhistory extends Migration
      */
     public function down()
     {
-        Schema::table('quizhistory', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('events');
     }
 }

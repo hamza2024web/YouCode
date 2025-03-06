@@ -78,7 +78,7 @@
 
                     <!-- Event Creation Form -->
                     <div class="md:col-span-7 p-10">
-                        <form action="/events/create" method="POST" class="space-y-6">
+                        <form action="/eventsCrate" method="POST" class="space-y-6">
                             @csrf
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Event Title</label>
@@ -102,7 +102,7 @@
                                     <div class="relative">
                                         <input 
                                             type="datetime-local" 
-                                            name="start_date" 
+                                            name="date_start" 
                                             required 
                                             class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
                                         >
@@ -116,7 +116,7 @@
                                     <div class="relative">
                                         <input 
                                             type="datetime-local" 
-                                            name="end_date" 
+                                            name="date_end" 
                                             required 
                                             class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-300"
                                         >

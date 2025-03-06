@@ -37,4 +37,5 @@ Route::get('/logout',[LoginController::class,'logout']);
 Route::get('UsersManagement',[AdminController::class,'user']);
 Route::get('/staff',[StaffController::class,'show']);
 Route::get('/event',[StaffController::class,'showEvent']);
+Route::post('/eventsCrate',[StaffController::class,'createEvent']);
 
