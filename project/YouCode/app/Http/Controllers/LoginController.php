@@ -27,6 +27,12 @@ class LoginController extends Controller
                     return redirect('dashboard')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
                 } elseif ($user->role->role === "Apprenant") {
                     return redirect('home')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
+                } elseif ($user->role->role === "Staff"){
+                    return redirect('staff')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
+                } elseif ($user->role->role === "CME"){
+                    return redirect('Staff')->with('success', 'Vous êtes bien connecté ' . $user->email . '.');
+                } elseif ($user->role->role === "Administrateur") {
+                    return redirect('Staff')->with('success','Vous êtes bien connecté ' . $user->email . '.');
                 }
             }
         } else {

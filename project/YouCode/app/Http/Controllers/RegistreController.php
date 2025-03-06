@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegistreRequest;
 use App\Models\Role;
 use App\Models\User;
+use App\Http\Requests\StaffRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,18 +26,8 @@ class RegistreController extends Controller
 
         return redirect('login')->with('success','Your account Is Registred Successfully');
     }
-    public function storeStaff(Request $request){
-        $formFields = $request->validate([
-            'role' => 'required',
-            'name' => 'required',
-            'prenom' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed',
-            'date_de_naissance' => 'required',
-            'CIN' => 'required',
-            'Phone_numbre' => 'required',
-            'campus' => 'required',
-        ]);
+    public function storeStaff(StaffRequest $request){
+        $formFields = $request->validated();
         $password = $request->password;
         $formFields['password'] = Hash::make($password);
 
@@ -46,6 +37,8 @@ class RegistreController extends Controller
             $role = Role::where('role','Staff')->first();
         } elseif ($formFields['role'] == "CME"){
             $role = Role::where('role','CME')->first();
+        } else {
+            # code...
         }
 
         $formFields['role_id'] = $role->id;

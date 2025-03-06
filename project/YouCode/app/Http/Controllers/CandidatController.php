@@ -19,7 +19,7 @@ class CandidatController extends Controller
     }
     public function indexCandidat(){
         $user = Auth::user();
-        $questions = Question::with('responses')->paginate(1);
+        $questions = Question::with('responses')->inRandomOrder()->paginate(1);
         return view('candidat',compact('questions'),compact('user'));
     }
 

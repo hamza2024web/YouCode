@@ -15,7 +15,7 @@ class AdminController extends Controller
         return view('dashboard');
     }
     public function user(){
-        $users = User::with('quizResults')->get();
+        $users = User::with('quizResults')->where('role_id',2)->get();
         return view('UsersManagement',compact('users'));
     }
 }

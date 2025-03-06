@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,4 +35,6 @@ Route::get('/',[HomeController::class,'tologin']);
 Route::get('/quiz/completed', function() {return view('quiz.completed');})->name('quiz.completed');
 Route::get('/logout',[LoginController::class,'logout']);
 Route::get('UsersManagement',[AdminController::class,'user']);
+Route::get('/staff',[StaffController::class,'show']);
+Route::get('/event',[StaffController::class,'showEvent']);
 

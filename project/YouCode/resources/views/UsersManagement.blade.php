@@ -109,7 +109,7 @@
     </div>
 
     <div id="addUserModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-        <div class="bg-white rounded-lg p-6 w-96">
+        <div class="bg-white rounded-lg p-6 w-150">
             <h2 class="text-xl font-bold mb-4">Add New User</h2>
             <form action="/storeStaff" method="post" class="space-y-4" id="addUserForm">
                 @csrf
@@ -220,6 +220,11 @@
                     Create Account
                 </button>
             </form>
+            <div>
+                <button onclick="closeModal()" class="w-full bg-gradient-to-r from-red-600 to-purple-600 text-white px-4 py-3 rounded-lg font-semibold hover:from-red-700 hover:to-purple-700 transition duration-300 transform hover:scale-105">
+                    Cancel
+                </button>
+            </div>
         </div>
     </div>
 
