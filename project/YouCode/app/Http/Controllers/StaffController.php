@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StaffController extends Controller
 {
@@ -11,12 +12,14 @@ class StaffController extends Controller
         return view('staff');
     }
     public function showEvent(){
-        return view('event');
+        $user = Auth::user();
+        return view('event',compact('user'));
     }
 
     public function createEvent(Request $request){
 
         $formFields =  $request->validate([
+            'staff_id' => 'required',
             'title' => 'required',
             'date_start' => 'required',
             'date_end' => 'required',

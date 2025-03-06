@@ -48,5 +48,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function quizResults (){
         return $this->hasMany(QuizResult::class,'candidat_id');
     }
+    public function events (){
+        return $this->hasMany(Event::class,'Staff_id');
+    }
 
 }

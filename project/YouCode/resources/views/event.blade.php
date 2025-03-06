@@ -81,15 +81,10 @@
                         <form action="/eventsCrate" method="POST" class="space-y-6">
                             @csrf
                             <div>
+                                <input type="hidden" name="staff_id" value="{{$user->id}}">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Event Title</label>
                                 <div class="relative">
-                                    <input 
-                                        type="text" 
-                                        name="title" 
-                                        required 
-                                        class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-                                        placeholder="Enter event title"
-                                    >
+                                    <input type="text" name="title" required class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"placeholder="Enter event title">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <i data-feather="type" class="w-5 h-5 text-gray-400"></i>
                                     </div>
